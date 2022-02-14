@@ -1,0 +1,12 @@
+{
+  "name": "petshop-graphql-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^3.9.2"
+  },
+  "devDependencies": {
+    "prisma": "^3.9.2"
+  }
+}
