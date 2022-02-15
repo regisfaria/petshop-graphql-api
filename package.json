@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "tsnd --inspect --ignore-watch node_modules/ ./src/shared/server.ts"
+    "dev": "tsnd --inspect --ignore-watch node_modules/ ./src/server.ts"
   },
   "dependencies": {
     "@prisma/client": "^3.9.2",
