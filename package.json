@@ -2,13 +2,16 @@
   "name": "petshop-graphql-api",
   "version": "1.0.0",
   "license": "MIT",
+  "scripts": {
+    "dev": "tsnd --inspect --ignore-watch node_modules/ ./src/shared/server.ts"
+  },
   "dependencies": {
     "@prisma/client": "^3.9.2",
     "apollo-server-express": "^3.6.3",
     "bcrypt": "^5.0.1",
     "class-validator": "^0.13.2",
     "express": "^4.17.2",
-    "graphql": "^16.3.0",
+    "graphql": "^15.3.0",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.1.1"
   },
