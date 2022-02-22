@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  postgres_db:
+    image: postgres
+    container_name: postgres_db
+    restart: always
+    ports:
+      - 5432:5432
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=petshop_api
+  
+  prisma_migration:
+    build: 
+      context: .
+      dockerfile: Dockerfile.migration
+    links:
+      - postgres_db
+    depends_on:
+      - postgres_db
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres_db:5432/petshop_api?schema=public
+
+  app:
+    build: .
+    container_name: petshop-api
+    restart: always
+    links:
+      - postgres_db
+      - prisma_migration
+    depends_on:
+      - postgres_db
+      - prisma_migration
+    ports: 
+      - 4010:4010
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres_db:5432/petshop_api?schema=public

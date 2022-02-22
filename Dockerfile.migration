@@ -1,0 +1,7 @@
+FROM node
+
+ADD prisma/ src/
+
+WORKDIR src/
+
+CMD ["npx", "prisma", "migrate", "dev"]
