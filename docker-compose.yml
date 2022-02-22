@@ -25,6 +25,7 @@ services:
 
   app:
     build: .
+    #image: regisfaria/petshop-api:v1
     container_name: petshop-api
     restart: always
     links:
